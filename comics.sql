@@ -110,8 +110,8 @@ INSERT INTO comic(comic_id,descripcion,autor_id,editorial_id)values(3,'Superman-
 INSERT INTO comic(comic_id,descripcion,autor_id,editorial_id)values(4,'Batman A1-2020',3,3);
 INSERT INTO comic(comic_id,descripcion,autor_id,editorial_id)values(5,'Batman A3-2020',3,3);
 
-INSERT INTO encargado(encargado_id,nombre,apellido,dni,direccion)values(1,'Jorge Lopez','21954682','San Juan 1854');
-INSERT INTO encargado(encargado_id,nombre,apellido,dni,direccion)values(2,'Ruben Garcia','25842598','Donado 3645');
+INSERT INTO encargado(encargado_id,nombre,apellido,dni,direccion)values(1,'Jorge','Lopez','21954682','San Juan 1854');
+INSERT INTO encargado(encargado_id,nombre,apellido,dni,direccion)values(2,'Ruben','Garcia','25842598','Donado 3645');
 
 INSERT INTO local(local_id,encargado_id,nombre,direccion,latitud,longitud)values(1,1,'Comic Center','Elcano 3017','34','58');
 INSERT INTO local(local_id,encargado_id,nombre,direccion,latitud,longitud)values(2,2,'The GF Comics','Corrientes 5239','35','57');
