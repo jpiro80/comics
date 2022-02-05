@@ -50,18 +50,18 @@ SELECT descripcion, nombre FROM comic d INNER JOIN editorial a ON (d.editorial_i
 --  WHERE <completar>
 -- Solucion:
 
-SELECT descripcion, nombre, apellido FROM comic c INNER JOIN autor a ON (c.autor_id = a.autor_id) WHERE apellido = 'Lee'
+SELECT descripcion, nombre, apellido FROM comic c INNER JOIN autor a ON (c.autor_id = a.autor_id) WHERE apellido = 'Lee';
 
 -------------- Ejercicio 8 --------------
 -- Listar todos los locales cuyo encargado sea Jorge Lopez
 -- <completar>
 -- Solucion:
 
-SELECT b.nombre FROM local b INNER JOIN encargado a ON (b.encargado_id = a.encargado_id) WHERE apellido = 'Lopez'
+SELECT b.nombre FROM local b INNER JOIN encargado a ON (b.encargado_id = a.encargado_id) WHERE apellido = 'Lopez';
 
 -------------- Ejercicio 9 --------------
 -- Listar todos los locales cuyo encargado contenga en su nombre la letra "e"
 -- <completar>
 -- Solucion:
 
-SELECT b.nombre, b.direccion FROM local b INNER JOIN encargado c ON (b.encargado_id = c.encargado_id) WHERE b.nombre LIKE 'e'
+SELECT b.nombre, b.direccion FROM local b INNER JOIN encargado c ON (b.encargado_id = c.encargado_id) WHERE b.nombre LIKE '%e%';
