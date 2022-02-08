@@ -97,7 +97,7 @@ SELECT descripcion FROM comic WHERE descripcion ILIKE 's%';
 -- Ver https://es.stackoverflow.com/questions/205056/c%C3%B3mo-puedo-hacer-una-consulta-en-postgresql-sin-discriminar-min%C3%BAsculas-y-may%C3%BAsc
 -- Solucion:
 
-SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE '%r%' AND apellido ILIKE '%r%';
+SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE '%r%' OR apellido ILIKE '%r%';
 
 -------------- Ejercicio 15 --------------
 -- Listar encargados cuyo nombre comience con j o termine con n (no distinguir mayuscula y minuscula)
