@@ -20,14 +20,14 @@ SELECT nombre, apellido FROM autor WHERE nombre = 'Stan';
 -- SELECT <completar> FROM autor WHERE apellido LIKE <completar>;
 -- Solucion:
 
-SELECT nombre, apellido FROM autor WHERE apellido LIKE 'l';
+SELECT nombre, apellido FROM autor WHERE apellido LIKE '%l%';
 
 -------------- Ejercicio 4 --------------
 -- Listar todos los comic cuya descripcion contenga la palabra "er"
 -- SELECT <completar> FROM comic WHERE <completar>
 -- Solucion:
 
-SELECT descripcion FROM comic WHERE descripcion LIKE 'er';
+SELECT descripcion FROM comic WHERE descripcion LIKE '%er%';
 
 -------------- Ejercicio 5 --------------
 -- Listar todos los comics con sus autores respectivos (Utilizar JOIN)
@@ -57,7 +57,7 @@ SELECT descripcion, nombre, apellido FROM comic c INNER JOIN autor a ON (c.autor
 -- <completar>
 -- Solucion:
 
-SELECT b.nombre FROM local b INNER JOIN encargado a ON (b.encargado_id = a.encargado_id) WHERE apellido = 'Lopez';
+SELECT b.nombre FROM local b INNER JOIN encargado a ON (b.encargado_id = a.encargado_id) WHERE a.nombre = 'Jorge' AND a.apellido = 'Lopez';
 
 -------------- Ejercicio 9 --------------
 -- Listar todos los locales cuyo encargado contenga en su nombre la letra "e"
