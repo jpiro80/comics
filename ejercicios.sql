@@ -65,3 +65,43 @@ SELECT b.nombre FROM local b INNER JOIN encargado a ON (b.encargado_id = a.encar
 -- Solucion:
 
 SELECT b.nombre, b.direccion FROM local b INNER JOIN encargado c ON (b.encargado_id = c.encargado_id) WHERE b.nombre LIKE '%e%';
+
+-------------- Ejercicio 10 --------------
+-- Listar todos los autores cuyo apellido comience con la letra L
+-- Solucion:
+
+SELECT nombre, apellido FROM autor WHERE apellido LIKE 'L%';
+
+-------------- Ejercicio 11 --------------
+-- Listar todos los autores cuyo apellido finalice con la letra l
+-- Solucion:
+
+SELECT nombre, apellido FROM autor WHERE apellido LIKE '%l';
+
+-------------- Ejercicio 12 --------------
+-- Listar todos los autores cuyo apellido contengan la letra l (no distinguir entre mayuscula y minuscula)
+-- Ver https://es.stackoverflow.com/questions/205056/c%C3%B3mo-puedo-hacer-una-consulta-en-postgresql-sin-discriminar-min%C3%BAsculas-y-may%C3%BAsc
+-- Solucion:
+
+SELECT nombre, apellido FROM autor WHERE apellido ILIKE '%l%';
+
+-------------- Ejercicio 13 --------------
+-- Listar todos los comics cuya descripcion comience con la letra s (no distinguir entre mayuscula y minuscula)
+-- Ver https://es.stackoverflow.com/questions/205056/c%C3%B3mo-puedo-hacer-una-consulta-en-postgresql-sin-discriminar-min%C3%BAsculas-y-may%C3%BAsc
+-- Solucion:
+
+SELECT descripcion FROM comic WHERE descripcion ILIKE 's%';
+
+-------------- Ejercicio 14 --------------
+-- Listar nombre apellido y dni de los encargados cuyo nombre o apellido contengan una letra r (no distinguir mayuscula y minuscula)
+-- Ver https://es.stackoverflow.com/questions/205056/c%C3%B3mo-puedo-hacer-una-consulta-en-postgresql-sin-discriminar-min%C3%BAsculas-y-may%C3%BAsc
+-- Solucion:
+
+SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE '%r%' AND apellido ILIKE '%r%';
+
+-------------- Ejercicio 15 --------------
+-- Listar encargados cuyo nombre comience con j o termine con n (no distinguir mayuscula y minuscula)
+-- Ver https://es.stackoverflow.com/questions/205056/c%C3%B3mo-puedo-hacer-una-consulta-en-postgresql-sin-discriminar-min%C3%BAsculas-y-may%C3%BAsc
+-- Solucion:
+
+SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE 'j%' OR nombre ILIKE '%n';
