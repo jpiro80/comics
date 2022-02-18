@@ -105,3 +105,47 @@ SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE '%r%' OR apellido
 -- Solucion:
 
 SELECT nombre, apellido, dni FROM encargado WHERE nombre ILIKE 'j%' OR nombre ILIKE '%n';
+
+-------------- Ejercicio 16 --------------
+-- Listar todos los autores cuyo apellido comience con la letra L (Mayuscula)
+-- Solucion:
+
+SELECT nombre, apellido FROM autor WHERE apellido LIKE 'L%';
+
+-------------- Ejercicio 17 --------------
+-- Listar todos los autores cuyo apellido finalice con la letra l (minuscula)
+-- Solucion:
+
+SELECT nombre, apellido FROM autor WHERE apellido LIKE '%l';
+
+-------------- Ejercicio 18 --------------
+-- Listar el stock total de cada comic por cada tienda
+-- Ejemplo: local           comic           stock
+--			'Comic Center' 'Spiderman-1990' 24
+-- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
+-- Solucion:
+
+SELECT nombre,descripcion,cantidad FROM local,comic,stock_comic GROUP BY local.nombre,comic.descripcion,stock_comic.cantidad ORDER BY local.nombre;
+
+-------------- Ejercicio 19 --------------
+-- Listar el stock total de cada comic de todas las tiendas
+-- Ej:	comic 				total
+--		'Spiderman-1990'	120
+-- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
+-- Solucion:
+
+SELECT descripcion,cantidad FROM comic,stock_comic GROUP BY comic.descripcion,stock_comic.cantidad ORDER BY comic.descripcion;
+
+-------------- Ejercicio 20 --------------
+-- Listar la cantidad de locales (utilizar count)
+-- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
+-- Solucion:
+
+SELECT nombre,count(*) FROM local GROUP BY local.nombre;
+
+-------------- Ejercicio 21 --------------
+-- Listar la cantidad de operaciones por cada local
+-- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
+-- Solucion: 
+
+SELECT operacion_id,nombre,descripcion FROM operacion,local,tipo_operacion GROUP BY operacion.operacion_id,local.nombre,tipo_operacion.descripcion ORDER BY operacion.operacion_id;
