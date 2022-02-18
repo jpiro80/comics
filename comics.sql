@@ -121,47 +121,47 @@ INSERT INTO medio_de_pago(medio_de_pago_id,descripcion,slug)values(2,'credito',N
 INSERT INTO medio_de_pago(medio_de_pago_id,descripcion,slug)values(3,'efectivo',NULL);
 
 --1-- Insertar el tipo de operacion compra y el tipo venta, con id 1 y 2 respectivamente (no esta el insert en comics.sql)
-INSERT INTO tipo_operacion(tipo_operacion_id,descripcion) VALUES(1,'compra')
-INSERT INTO tipo_operacion(tipo_operacion_id,descripcion) VALUES(2,'venta')
+INSERT INTO tipo_operacion(tipo_operacion_id,descripcion) VALUES(1,'compra');
+INSERT INTO tipo_operacion(tipo_operacion_id,descripcion) VALUES(2,'venta');
 
 --2-- Insertar 1 nuevo local llamado 'Comic DC'
-INSERT INTO local(local_id,encargado_id,nombre,direccion,latitud,longitud) VALUES(3,2,'Comic DC','Florida 235','33','56')
+INSERT INTO local(local_id,encargado_id,nombre,direccion,latitud,longitud) VALUES(3,2,'Comic DC','Florida 235','33','56');
 
 --3-- Insertar 15 unidades de cada comic dentro del local 'Comic Center'
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(1,1,1,'15')
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(2,2,1,'15')
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(3,3,1,'15')
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(4,4,1,'15')
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(5,5,1,'15')
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(1,1,1,'15');
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(2,2,1,'15');
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(3,3,1,'15');
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(4,4,1,'15');
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(5,5,1,'15');
 
 --4-- Insertar 20 unidades de 'X-MEN #2 - 1995' y 'Spiderman-1990' en el local 'The GF Comics'
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(6,1,2,'20')
-INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(7,2,2,'20')
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(6,1,2,'20');
+INSERT INTO stock_comic(stock_comic_id,comic_id,local_id,cantidad) VALUES(7,2,2,'20');
 
 --5-- Modificar el dni del encargado Jorge Lopez por '31954682' (UPDATE)
-UPDATE encargado SET dni='31954682' WHERE encargado_id=1
+UPDATE encargado SET dni='31954682' WHERE encargado_id=1;
 
 --6-- Modificar la direccion del local Comic Center por Elcano 1233 (UPDATE)
-UPDATE local SET direccion='Elcano 1233' WHERE local_id=1
+UPDATE local SET direccion='Elcano 1233' WHERE local_id=1;
 
 --7-- Insertar 1 nuevo autor
-INSERT INTO autor(autor_id,nombre,apellido) VALUES(4,'Akira','Toriyama')
+INSERT INTO autor(autor_id,nombre,apellido) VALUES(4,'Akira','Toriyama');
 
 --8-- Modificar la tabla operaciones agregando el campo fecha_operacion DATETIME (ALTER TABLE ADD COLUMN)
 ALTER TABLE operacion
-ADD COLUMN fecha_operacion TIMESTAMP NOT NULL
+ADD COLUMN fecha_operacion TIMESTAMP NOT NULL;
 
 --9-- Modificar la tabla Medios de pago quitando el campo slug (DROP COLUMN)
 ALTER TABLE medio_de_pago
-DROP COLUMN slug
+DROP COLUMN slug;
 
 --10-- Agregar en encargado el campo fecha_nacimiento con valor por default 01-01-1999
 ALTER TABLE encargado
-ADD COLUMN fecha_nacimiento TIMESTAMP NOT NULL DEFAULT '01-01-1999'
+ADD COLUMN fecha_nacimiento TIMESTAMP NOT NULL DEFAULT '01-01-1999';
 
 --11-- Insertar dos operaciones de compra sobre el local 1 y 1 de venta sobre todos los locales
-INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(1,1,1,1,1,'1200','14-02-2022 14:36:57')
-INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,1,2,1,2,'900','15-02-2022 16:05:16')
-INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,2,4,1,3,'1600','02-02-2022 15:08:24')
-INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(1,2,2,2,4,'1650','03-02-2022 15:28:31')
-INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,2,5,3,5,'850','11-02-2022 11:34:08')
+INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(1,1,1,1,1,'1200','14-02-2022 14:36:57');
+INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,1,2,1,2,'900','15-02-2022 16:05:16');
+INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,2,4,1,3,'1600','02-02-2022 15:08:24');
+INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(1,2,2,2,4,'1650','03-02-2022 15:28:31');
+INSERT INTO operacion(medio_de_pago_id,tipo_operacion_id,comic_id,local_id,operacion_id,monto,fecha_operacion) VALUES(3,2,5,3,5,'850','11-02-2022 11:34:08');
