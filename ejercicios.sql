@@ -125,10 +125,9 @@ SELECT nombre, apellido FROM autor WHERE apellido LIKE '%l';
 -- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
 -- Solucion:
 
-SELECT local.nombre,comic.descripcion,stock_comic.cantidad
-	FROM stock_comic INNER JOIN comic ON stock_comic.comic_id = comic.comic_id
-					 INNER JOIN local ON stock_comic.local_id = local.local_id
-GROUP BY local.nombre,comic.descripcion, stock_comic.cantidad;
+SELECT l.nombre,c.descripcion,sc.cantidad
+FROM stock_comic sc INNER JOIN comic c ON sc.comic_id = c.comic_id
+		    INNER JOIN local l ON sc.local_id = l.local_id;
 
 -------------- Ejercicio 19 --------------
 -- Listar el stock total de cada comic de todas las tiendas
@@ -137,7 +136,9 @@ GROUP BY local.nombre,comic.descripcion, stock_comic.cantidad;
 -- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
 -- Solucion:
 
-SELECT descripcion,cantidad FROM comic,stock_comic GROUP BY comic.descripcion,stock_comic.cantidad ORDER BY comic.descripcion;
+SELECT c.descripcion, SUM(sc.cantidad) AS cantidad_total
+FROM comic c INNER JOIN stock_comic sc ON sc.comic_id = c.comic_id
+GROUP BY c.comic_id, c.descripcion;
 
 -------------- Ejercicio 20 --------------
 -- Listar la cantidad de locales (utilizar count)
