@@ -138,7 +138,7 @@ FROM stock_comic sc INNER JOIN comic c ON sc.comic_id = c.comic_id
 
 SELECT c.descripcion, SUM(sc.cantidad) AS cantidad_total
 FROM comic c INNER JOIN stock_comic sc ON sc.comic_id = c.comic_id
-GROUP BY c.comic_id, c.descripcion;
+GROUP BY c.descripcion;
 
 -------------- Ejercicio 20 --------------
 -- Listar la cantidad de locales (utilizar count)
