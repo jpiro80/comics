@@ -125,7 +125,10 @@ SELECT nombre, apellido FROM autor WHERE apellido LIKE '%l';
 -- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
 -- Solucion:
 
-SELECT nombre,descripcion,cantidad FROM local,comic,stock_comic GROUP BY local.nombre,comic.descripcion,stock_comic.cantidad ORDER BY local.nombre;
+SELECT local.nombre,comic.descripcion,stock_comic.cantidad
+	FROM stock_comic INNER JOIN comic ON stock_comic.comic_id = comic.comic_id
+					 INNER JOIN local ON stock_comic.local_id = local.local_id
+GROUP BY local.nombre,comic.descripcion, stock_comic.cantidad;
 
 -------------- Ejercicio 19 --------------
 -- Listar el stock total de cada comic de todas las tiendas
