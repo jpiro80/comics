@@ -145,11 +145,13 @@ GROUP BY c.descripcion;
 -- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
 -- Solucion:
 
-SELECT nombre,count(*) FROM local GROUP BY local.nombre;
+SELECT COUNT(*) AS cantidad_total_locales FROM local;
 
 -------------- Ejercicio 21 --------------
 -- Listar la cantidad de operaciones por cada local
 -- Ver https://www.tutorialesprogramacionya.com/postgresqlya/temarios/descripcion.php?cod=190&punto=&inicio=
 -- Solucion: 
 
-SELECT operacion_id,nombre,descripcion FROM operacion,local,tipo_operacion GROUP BY operacion.operacion_id,local.nombre,tipo_operacion.descripcion ORDER BY operacion.operacion_id;
+SELECT l.nombre, SUM(o.operacion_id) AS total_operaciones
+FROM local l INNER JOIN operacion o ON o.local_id = l.local_id
+GROUP BY l.nombre;
