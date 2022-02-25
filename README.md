@@ -12,3 +12,6 @@ https://www.python.org/downloads/
 https://www.jetbrains.com/es-es/pycharm-edu/
 https://www.postgresql.org/download/
 ```
+## Creación de base de datos
+_Una vez instalados los programas, lo primero es ingresar al PostgreSQL mediante el acceso directo "PGAdmin" con la contraseña "admin" y crear una base de datos. Para ello, dar click derecho sobre "databases", ir a "Create" y luego ingresar en "Database" como indica la imagen._
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura01.jpg"/></p>
