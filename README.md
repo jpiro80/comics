@@ -28,3 +28,6 @@ _Por último, abrir el archivo del repositorio "comics.sql", copiar y pegar todo
 ## Conexión de Python a PostgreSQL
 _Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para eso comenzamos creando un nuevo proyecto. Vamos a "File" - "New Project" y luego creamos la carpeta "C:\Cursos\Python\BD\Leccion01", en "New environment using" seleccionamos "virtualenv" para crear un entorno virtual y en "interpreter" la versión de Python que tenemos instalada. Luego clickeamos en "Create"_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura05.jpg"/></p>
+
+_A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos Enter_
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura06.jpg"/></p>
