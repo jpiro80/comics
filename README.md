@@ -29,10 +29,10 @@ _Por último, abrir el archivo del repositorio "comics.sql", copiar y pegar todo
 _Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para eso comenzamos creando un nuevo proyecto. Vamos a "File" - "New Project" y luego creamos la carpeta "C:\Cursos\Python\BD\Leccion01", en "New environment using" seleccionamos "virtualenv" para crear un entorno virtual y en "interpreter" la versión de Python que tenemos instalada. Luego clickeamos en "Create"_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura05.jpg"/></p>
 
-_A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos Enter_
+_A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos ENTER_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura06.jpg"/></p>
 
-_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Lección01" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos enter para crearlo._
+_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Lección01" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos ENTER para crearlo._
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
 
 _Ingresamos el siguiente código en el archivo para iniciar la conexión a la base de datos y verificarla con la sentencia SELECT:_
@@ -47,3 +47,6 @@ cursor.execute(sentencia)
 registros = cursor.fetchall()
 print(registros)
 ```
+
+_Una vez copiado y pegado damos click derecho sobre el campo de edición del archivo y seleccionamos "Run 'prueba_bd'"_
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
