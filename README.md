@@ -31,3 +31,19 @@ _Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para 
 
 _A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos Enter_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura06.jpg"/></p>
+
+_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Lección01" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos enter para crearlo._
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
+
+_Ingresamos el siguiente código en el archivo para iniciar la conexión a la base de datos y verificarla con la sentencia SELECT:_
+```
+import psycopg2
+
+conexion = psycopg2.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
+
+cursor = conexion.cursor()
+sentencia = 'SELECT * FROM comic'
+cursor.execute(sentencia)
+registros = cursor.fetchall()
+print(registros)
+```
