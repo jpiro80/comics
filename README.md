@@ -49,4 +49,4 @@ print(registros)
 ```
 
 _Una vez copiado y pegado damos click derecho sobre el campo de edición del archivo y seleccionamos "Run 'prueba_bd'"_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura08.jpg"/></p>
