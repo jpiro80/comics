@@ -50,3 +50,27 @@ print(registros)
 
 _Una vez copiado y pegado damos click derecho sobre el campo de edición del archivo y seleccionamos "Run 'prueba_bd'"_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura08.jpg"/></p>
+
+_Al realizar esta conexión es necesario cerrarla. Por esta vez lo haremos manualmente, pero más adelante cuando usemos "with" se cerrará automáticamente y no será necesario. Escribimos entonces el siguiente código debajo de todo y ejecutamos el archivo:_
+```
+cursor.close()
+conexion.close()
+```
+_Pero como se ha dicho anteriormente, este código no es necesario si utilizamos el método "with". Para ello, borramos todo el código y lo reemplazamos por el siguiente:_
+```
+import psycopg2
+
+conexion = psycopg2.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
+
+try:
+    with conexion:
+        with conexion.cursor() as cursor:
+            sentencia = 'SELECT * FROM comic'
+            cursor.execute(sentencia)
+            registros = cursor.fetchall()
+            print(registros)
+except Exception as e:
+    print(f'Ocurrió un error: {e}')
+finally:
+    conexion.close()
+```
