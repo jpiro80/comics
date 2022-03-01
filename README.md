@@ -74,3 +74,37 @@ except Exception as e:
 finally:
     conexion.close()
 ```
+
+## Transacciones
+_A continuación, agregaremos un código de ejemplo para manejo de transacciones desde Python, mediante las cuales podremos modificar el contenido de la base de datos. Para ello primero debemos crear un archivo en nuestro proyecto llamado "transacciones.py" tal y como se muestra en la imagen._
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura09.jpg"/></p>
+
+_Luego copiaremos como se ve en la imagen, el siguiente código en el cuerpo del archivo, pero no lo ejecutamos. Sólo lo guardamos por ahora._
+```
+import psycopg2 as bd
+
+conexion = bd.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
+
+try:
+    with conexion:
+        with conexion.cursor() as cursor:
+            sentencia = 'INSERT INTO comic(comic_id, descripcion, autor_id, editorial_id) VALUES(%s, %s, %s, %s)'
+            valores = (2, 'Spiderman-1990', 1, 1)
+            cursor.execute(sentencia, valores)
+
+            sentencia = 'UPDATE comic SET comic_id=%s, descripcion=%s, autor_id=%s, editorial_id=%s WHERE comic_id=%s'
+            valores = (3, 'Superman-2011', 2, 2)
+            cursor.execute(sentencia, valores)
+except Exception as e:
+    print(f'Ocurrió un error, se hizo rollback: {e}')
+finally:
+    conexion.close()
+
+print('Termina la transacción, se hizo commit')
+```
+
+## Capas de datos
+Entramos de lleno a la creación de capas de datos.
+
+_Crearemos un nuevo proyecto llamado "capa_datos_comic", luego iremos a la terminal como en el proyecto anterior para instalar el psycopg2 de la misma forma y como se ve en la pantalla. Y luego dentro del proyecto crearemos cuatro archivos: "logger_base.py", "conexion.py", "comic.py" y "comic_dao.py"._
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura10.jpg"/></p>
