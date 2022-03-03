@@ -17,13 +17,13 @@ _Una vez instalados los programas, lo primero es ingresar al PostgreSQL mediante
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura01.jpg"/></p>
 
 _El el campo "Database" ingresar el nombre "comics" y dar click en "Save"_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura02.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura02.jpg"/></p>
 
 _Una vez creada la base de datos "comics", la misma aparecerá en la columna izquierda. Dar click derecho sobre la misma y luego ejecutar "Query Tool"_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura03.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura03.jpg"/></p>
 
 _Por último, abrir el archivo del repositorio "comics.sql", copiar y pegar todo su contenido en el Query Editor. Luego dar click sobre el botón de ejecutar, indicado en la imagen._
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura04.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura04.jpg"/></p>
 
 ## Conexión de Python a PostgreSQL
 _Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para eso comenzamos creando un nuevo proyecto. Vamos a "File" - "New Project" y luego creamos la carpeta "C:\Cursos\Python\BD\Leccion01", en "New environment using" seleccionamos "virtualenv" para crear un entorno virtual y en "interpreter" la versión de Python que tenemos instalada. Luego clickeamos en "Create"_
