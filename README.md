@@ -14,7 +14,7 @@ https://www.postgresql.org/download/
 ```
 ## Creación de base de datos
 _Una vez instalados los programas, lo primero es ingresar al PostgreSQL mediante el acceso directo "PGAdmin" con la contraseña "admin" y crear una base de datos. Para ello, dar click derecho sobre "databases", ir a "Create" y luego ingresar en "Database" como indica la imagen._
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura01.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura01.jpg"/></p>
 
 _El el campo "Database" ingresar el nombre "comics" y dar click en "Save"_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura02.jpg"/></p>
