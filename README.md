@@ -32,82 +32,13 @@ _Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para 
 _A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos ENTER_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura06.jpg"/></p>
 
-_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Comics" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos ENTER para crearlo._
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
-
-_Ingresamos el siguiente código en el archivo para iniciar la conexión a la base de datos y verificarla con la sentencia SELECT:_
-```
-import psycopg2
-
-conexion = psycopg2.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
-
-cursor = conexion.cursor()
-sentencia = 'SELECT * FROM comic'
-cursor.execute(sentencia)
-registros = cursor.fetchall()
-print(registros)
-```
-
-_Una vez copiado y pegado damos click derecho sobre el campo de edición del archivo y seleccionamos "Run 'prueba_bd'"_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura08.jpg"/></p>
-
-_Al realizar esta conexión es necesario cerrarla. Por esta vez lo haremos manualmente, pero más adelante cuando usemos "with" se cerrará automáticamente y no será necesario. Escribimos entonces el siguiente código debajo de todo y ejecutamos el archivo:_
-```
-cursor.close()
-conexion.close()
-```
-_Pero como se ha dicho anteriormente, este código no es necesario si utilizamos el método "with". Para ello, borramos todo el código y lo reemplazamos por el siguiente:_
-```
-import psycopg2
-
-conexion = psycopg2.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
-
-try:
-    with conexion:
-        with conexion.cursor() as cursor:
-            sentencia = 'SELECT * FROM comic'
-            cursor.execute(sentencia)
-            registros = cursor.fetchall()
-            print(registros)
-except Exception as e:
-    print(f'Ocurrió un error: {e}')
-finally:
-    conexion.close()
-```
-
-## Transacciones
-_A continuación, agregaremos un código de ejemplo para manejo de transacciones desde Python, mediante las cuales podremos modificar el contenido de la base de datos. Para ello primero debemos crear un archivo en nuestro proyecto llamado "transacciones.py" tal y como se muestra en la imagen._
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura09.jpg"/></p>
-
-_Luego copiaremos como se ve en la imagen, el siguiente código en el cuerpo del archivo, pero no lo ejecutamos. Sólo lo guardamos por ahora._
-```
-import psycopg2 as bd
-
-conexion = bd.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='comics')
-
-try:
-    with conexion:
-        with conexion.cursor() as cursor:
-            sentencia = 'INSERT INTO comic(comic_id, descripcion, autor_id, editorial_id) VALUES(%s, %s, %s, %s)'
-            valores = (2, 'Spiderman-1990', 1, 1)
-            cursor.execute(sentencia, valores)
-
-            sentencia = 'UPDATE comic SET comic_id=%s, descripcion=%s, autor_id=%s, editorial_id=%s WHERE comic_id=%s'
-            valores = (3, 'Superman-2011', 2, 2)
-            cursor.execute(sentencia, valores)
-except Exception as e:
-    print(f'Ocurrió un error, se hizo rollback: {e}')
-finally:
-    conexion.close()
-
-print('Termina la transacción, se hizo commit')
-```
-
 ## Capas de datos
 Entramos de lleno a la creación de capas de datos.
 
-_Crearemos un nuevo proyecto llamado "capa_datos_comic", luego iremos a la terminal como en el proyecto anterior para instalar el psycopg2 de la misma forma y como se ve en la pantalla. Y luego dentro del proyecto crearemos cuatro archivos: "logger_base.py", "conexion.py", "comic.py" y "comic_dao.py"._
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura10.jpg"/></p>
+_Dentro del proyecto crearemos cuatro archivos: Dentro de la carpeta principal "Comics" creamos una carpeta llamada "src" y luego damos click derecho en ella y creamos un archivo Pyton llamado "logger_base.py".
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/databases/imagenes/captura07.jpg"/></p>
+
+_Siguiendo el mismo procedimiento, dentro de la carpeta "src" creamos otra llamada "entities" y dentro de ella un archivo Python llamado "comic.py". También dentro de "src" crearemos una carpeta llamada "dao" y dentro de ella dos archivos Python, uno llamado "conexion.py" y otro llamado "comic_dao.py"._
 
 _En el archivo "logger_base.py" escribimos el siguiente código y ejecutamos:_
 ```
@@ -131,7 +62,7 @@ if __name__ == '__main__':
 
 _Si no ocurrieron errores, en el archivo "conexion.py" escribimos el siguiente código y ejecutamos:_
 ```
-from logger_base import log
+from src.logger_base import log
 import psycopg2 as bd
 import sys
 
@@ -181,7 +112,7 @@ if __name__ == '__main__':
 
 _Si no se produjeron errores, en el archivo "comic.py" escribir el siguiente código y ejecutar:_
 ```
-from logger_base import log
+from src.logger_base import log
 
 class Comic:
     def __init__(self, comic_id=None, descripcion=None, autor_id=None, editorial_id=None):
@@ -241,8 +172,8 @@ if __name__ == '__main__':
 _Si no se produjeron errores, insertamos por último el siguiente código en el archivo "comicDAO.py" y ejecutamos:_
 ```
 from conexion import Conexion
-from comic import Comic
-from logger_base import log
+from src.entities.comic import Comic
+from src.logger_base import log
 
 class ComicDAO:
     '''
