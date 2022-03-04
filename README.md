@@ -26,13 +26,13 @@ _Por último, abrir el archivo del repositorio "comics.sql", copiar y pegar todo
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura04.jpg"/></p>
 
 ## Conexión de Python a PostgreSQL
-_Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para eso comenzamos creando un nuevo proyecto. Vamos a "File" - "New Project" y luego creamos la carpeta "C:\Cursos\Python\BD\Leccion01", en "New environment using" seleccionamos "virtualenv" para crear un entorno virtual y en "interpreter" la versión de Python que tenemos instalada. Luego clickeamos en "Create"_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura05.jpg"/></p>
+_Ya desde el Pycharm, conectaremos desde Python a la base de datos creada. Para eso comenzamos creando un nuevo proyecto. Vamos a "File" - "New Project" y luego seleccionamos la carpeta "Comics" de nuestro disco duro, que es la que tenemos conectada con el repositorio en Github. En "New environment using" seleccionamos "virtualenv" para crear un entorno virtual y en "interpreter" la versión de Python que tenemos instalada. Luego clickeamos en "Create"_
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura05.jpg"/></p>
 
 _A continuación damos click sobre el botón "Terminal", escribimos "pip install psycopg2" y damos ENTER_
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura06.jpg"/></p>
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura06.jpg"/></p>
 
-_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Lección01" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos ENTER para crearlo._
+_Para crear un archivo Python dentro del proyecto, damos click derecho sobre "Comics" y seleccionamos "New" - "Python file" y llamamos al archivo "prueba_bd". Damos ENTER para crearlo._
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/imagenes/captura07.jpg"/></p>
 
 _Ingresamos el siguiente código en el archivo para iniciar la conexión a la base de datos y verificarla con la sentencia SELECT:_
