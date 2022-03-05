@@ -22,7 +22,7 @@ _El el campo "Database" ingresar el nombre "comics" y dar click en "Save"_
 _Una vez creada la base de datos "comics", la misma aparecerá en la columna izquierda. Dar click derecho sobre la misma y luego ejecutar "Query Tool"_
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura03.jpg"/></p>
 
-_Por último, abrir el archivo del repositorio "comics.sql", copiar y pegar todo su contenido en el Query Editor. Luego dar click sobre el botón de ejecutar, indicado en la imagen._
+_Por último, dentro de la carpeta "database" del repositorio, abrir el archivo "comics.sql", copiar y pegar todo su contenido en el Query Editor. Luego dar click sobre el botón de ejecutar, indicado en la imagen._
 <p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura04.jpg"/></p>
 
 ## Conexión de Python a PostgreSQL
