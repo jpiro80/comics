@@ -1,4 +1,4 @@
-from logger_base import log
+from src.logger_base import log
 import psycopg2 as bd
 import sys
 

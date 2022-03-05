@@ -1,0 +1,12 @@
+01:00:36 PM: DEBUG [comic.py:49] 
+            Comic Id: 1, Descripcion: X-MEN #2 - 1995,
+            Autor Id: 1, Editorial Id: 1
+        
+01:00:36 PM: DEBUG [comic.py:52] 
+            Comic Id: None, Descripcion: X-MEN #2 - 1995,
+            Autor Id: None, Editorial Id: None
+        
+01:00:36 PM: DEBUG [comic.py:55] 
+            Comic Id: 1, Descripcion: None,
+            Autor Id: None, Editorial Id: None
+        

@@ -1,0 +1,46 @@
+11:43:57 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001AB38AF17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:44:16 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001D0F2C617A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:44:56 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001E445F317A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:45:08 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000002CD6C4A17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:45:29 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001C3E39917A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:45:29 AM: DEBUG [main.py:5] 
+            Comic Id: 1, Descripcion: X-MEN #2 - 1995,
+            Autor Id: 1, Editorial Id: 1
+        
+11:45:29 AM: DEBUG [main.py:5] 
+            Comic Id: 2, Descripcion: Spiderman-1990,
+            Autor Id: 1, Editorial Id: 1
+        
+11:45:29 AM: DEBUG [main.py:5] 
+            Comic Id: 3, Descripcion: Superman-2011,
+            Autor Id: 2, Editorial Id: 2
+        
+11:45:29 AM: DEBUG [main.py:5] 
+            Comic Id: 4, Descripcion: Batman A1-2020,
+            Autor Id: 3, Editorial Id: 3
+        
+11:45:30 AM: DEBUG [main.py:5] 
+            Comic Id: 5, Descripcion: Batman A3-2020,
+            Autor Id: 3, Editorial Id: 3
+        
+11:45:38 AM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x0000027450C117A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+11:45:38 AM: DEBUG [main.py:5] 
+            Comic Id: 1, Descripcion: X-MEN #2 - 1995,
+            Autor Id: 1, Editorial Id: 1
+        
+11:45:38 AM: DEBUG [main.py:5] 
+            Comic Id: 2, Descripcion: Spiderman-1990,
+            Autor Id: 1, Editorial Id: 1
+        
+11:45:38 AM: DEBUG [main.py:5] 
+            Comic Id: 3, Descripcion: Superman-2011,
+            Autor Id: 2, Editorial Id: 2
+        
+11:45:38 AM: DEBUG [main.py:5] 
+            Comic Id: 4, Descripcion: Batman A1-2020,
+            Autor Id: 3, Editorial Id: 3
+        
+11:45:38 AM: DEBUG [main.py:5] 
+            Comic Id: 5, Descripcion: Batman A3-2020,
+            Autor Id: 3, Editorial Id: 3
+        

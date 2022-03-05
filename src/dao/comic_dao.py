@@ -1,6 +1,6 @@
-from conexion import Conexion
-from comic import Comic
-from logger_base import log
+from src.dao.conexion import Conexion
+from src.entities.comic import Comic
+from src.logger_base import log
 
 class ComicDAO:
     '''

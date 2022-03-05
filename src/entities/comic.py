@@ -1,4 +1,4 @@
-from logger_base import log
+from src.logger_base import log
 
 class Comic:
     def __init__(self, comic_id=None, descripcion=None, autor_id=None, editorial_id=None):
