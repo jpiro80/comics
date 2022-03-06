@@ -245,3 +245,13 @@ if __name__ == '__main__':
     for comic in comics:
         log.debug(comic)
 ```
+
+## Main.py
+_Por último, crear un archivo Python llamado "main.py" en la carpeta raiz del proyecto, escribir el siguiente código dentro del mismo y ejecutar:_
+```
+from src.dao.comic_dao import *
+
+comics = ComicDAO.seleccionar()
+for comic in comics:
+    log.debug(comic)
+```
