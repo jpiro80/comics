@@ -35,8 +35,8 @@ _A continuación damos click sobre el botón "Terminal", escribimos "pip install
 ## Capas de datos
 Entramos de lleno a la creación de capas de datos.
 
-_Dentro del proyecto crearemos cuatro archivos: Dentro de la carpeta principal "Comics" creamos una carpeta llamada "src" y luego damos click derecho en ella y creamos un archivo Pyton llamado "logger_base.py".
-<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/databases/imagenes/captura07.jpg"/></p>
+_Dentro del proyecto crearemos cuatro archivos: Dentro de la carpeta principal "Comics" creamos una carpeta llamada "src" y luego damos click derecho en ella y creamos un archivo Pyton llamado "logger_base.py"._
+<p align="center"><img src="https://github.com/jpiro80/comics/blob/master/database/imagenes/captura07.jpg"/></p>
 
 _Siguiendo el mismo procedimiento, dentro de la carpeta "src" creamos otra llamada "entities" y dentro de ella un archivo Python llamado "comic.py". También dentro de "src" crearemos una carpeta llamada "dao" y dentro de ella dos archivos Python, uno llamado "conexion.py" y otro llamado "comic_dao.py"._
 
