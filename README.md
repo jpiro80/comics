@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
 _Si no se produjeron errores, insertamos por último el siguiente código en el archivo "comicDAO.py" y ejecutamos:_
 ```
-from conexion import Conexion
+from src.conexion import Conexion
 from src.entities.comic import Comic
 from src.logger_base import log
 
