@@ -7,16 +7,29 @@ class ComicDAO:
     DAO (Data Access Object)
     CRUD (Create-Read-Update-Delete)
     '''
-    _SELECCIONAR = 'SELECT * FROM comic ORDER BY comic_id'
+    # _SELECCIONAR = 'SELECT * FROM comic ORDER BY comic_id'
+    _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic'
     # _INSERTAR = 'INSERT INTO comic(descripcion) VALUES(%s)'
     # _ACTUALIZAR = 'UPDATE comic SET descripcion=%s WHERE comic_id=%s'
     # _ELIMINAR = 'DELETE FROM comic WHERE comic_id=%s'
 
+    # @classmethod
+    # def seleccionar(cls):
+    #     with Conexion.obtenerConexion() as conexion:
+    #         with conexion.cursor() as cursor:
+    #             cursor.execute(cls._SELECCIONAR)
+    #             registros = cursor.fetchall()
+    #             comics = []
+    #             for registro in registros:
+    #                 comic = Comic(registro[0], registro[1], registro[2], registro[3])
+    #                 comics.append(comic)
+    #             return comics
+
     @classmethod
-    def seleccionar(cls):
+    def seleccionar_por_nombre(cls):
         with Conexion.obtenerConexion() as conexion:
             with conexion.cursor() as cursor:
-                cursor.execute(cls._SELECCIONAR)
+                cursor.execute(cls._SELECCIONAR_POR_NOMBRE)
                 registros = cursor.fetchall()
                 comics = []
                 for registro in registros:
