@@ -8,7 +8,7 @@ class ComicDAO:
     CRUD (Create-Read-Update-Delete)
     '''
     # _SELECCIONAR = 'SELECT * FROM comic ORDER BY comic_id'
-    _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic'
+    _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic WHERE comic.descripción=%s'
     # _INSERTAR = 'INSERT INTO comic(descripcion) VALUES(%s)'
     # _ACTUALIZAR = 'UPDATE comic SET descripcion=%s WHERE comic_id=%s'
     # _ELIMINAR = 'DELETE FROM comic WHERE comic_id=%s'
@@ -26,7 +26,7 @@ class ComicDAO:
     #             return comics
 
     @classmethod
-    def seleccionar_por_nombre(cls):
+    def seleccionar_por_nombre(cls, comic_buscar):
         with Conexion.obtenerConexion() as conexion:
             with conexion.cursor() as cursor:
                 cursor.execute(cls._SELECCIONAR_POR_NOMBRE)
