@@ -9,6 +9,7 @@ class ComicDAO:
     '''
     # _SELECCIONAR = 'SELECT * FROM comic ORDER BY comic_id'
     _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic WHERE comic.descripción=%s'
+    _DESCRIPCION = ('descripcion=Spiderman%',)
     # _INSERTAR = 'INSERT INTO comic(descripcion) VALUES(%s)'
     # _ACTUALIZAR = 'UPDATE comic SET descripcion=%s WHERE comic_id=%s'
     # _ELIMINAR = 'DELETE FROM comic WHERE comic_id=%s'
@@ -29,7 +30,7 @@ class ComicDAO:
     def seleccionar_por_nombre(cls, comic_buscar):
         with Conexion.obtenerConexion() as conexion:
             with conexion.cursor() as cursor:
-                cursor.execute(cls._SELECCIONAR_POR_NOMBRE)
+                cursor.execute(cls._SELECCIONAR_POR_NOMBRE, cls._DESCRIPCION)
                 registros = cursor.fetchall()
                 comics = []
                 for registro in registros:
