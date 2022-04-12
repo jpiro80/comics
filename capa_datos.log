@@ -233,3 +233,8 @@
 12:41:30 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001BC7AEB17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
 12:42:04 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x00000269484317A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
 12:45:54 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001EC65B717A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+01:14:41 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x00000200260117A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+01:15:35 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x0000014F96AF17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+01:16:08 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x000001BA250617A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+01:16:23 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x00000250EFFE17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
+01:16:55 PM: DEBUG [conexion.py:23] Conexión exitosa: <connection object at 0x0000025EB45E17A0; dsn: 'user=postgres password=xxx dbname=comics host=127.8.8.1 port=5432', closed: 0>
