@@ -29,7 +29,7 @@ class ComicDAO:
     def seleccionar_por_nombre(cls, comic_buscar):
         with Conexion.obtenerConexion() as conexion:
             with conexion.cursor() as cursor:
-                cursor.execute('SELECT * FROM comic WHERE comic.descripcion LIKE s% LIMIT 1', [comic_buscar])
+                cursor.execute('SELECT * FROM comic WHERE comic.descripcion LIKE %s LIMIT 1', [comic_buscar])
                 registros = cursor.fetchall()
                 comics = []
                 for registro in registros:
