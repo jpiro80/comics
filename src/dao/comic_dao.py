@@ -8,7 +8,7 @@ class ComicDAO:
     CRUD (Create-Read-Update-Delete)
     '''
     # _SELECCIONAR = 'SELECT * FROM comic ORDER BY comic_id'
-    _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic WHERE comic.descripcion ILIKE %s'
+    _SELECCIONAR_POR_NOMBRE = 'SELECT * FROM comic WHERE comic.descripcion LIKE s% LIMIT 1', ('%' + comic.descripcion + '%',)
     # _INSERTAR = 'INSERT INTO comic(descripcion) VALUES(%s)'
     # _ACTUALIZAR = 'UPDATE comic SET descripcion=%s WHERE comic_id=%s'
     # _ELIMINAR = 'DELETE FROM comic WHERE comic_id=%s'
